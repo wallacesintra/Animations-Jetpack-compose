@@ -37,8 +37,8 @@ fun ValueChange(){
             targetValue = if (isRounded) 100 else 0,
             label = "border radius",
             animationSpec = tween(
-                durationMillis = 3000,
-                delayMillis = 200
+                durationMillis = 2000,
+                delayMillis = 100
             )
 //            animationSpec = spring(
 //                dampingRatio = Spring.DampingRatioMediumBouncy,
@@ -51,7 +51,7 @@ fun ValueChange(){
                     onClick = {isRounded = !isRounded}
                 )
                 .padding(10.dp)
-                .size(150.dp)
+                .size(200.dp)
                 .clip(RoundedCornerShape(borderRadius))
 
 
