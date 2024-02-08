@@ -2,8 +2,11 @@ package com.example.animation
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOut
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.background
@@ -38,7 +41,7 @@ fun AnimationVisibility(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         var visible by remember{
-            mutableStateOf(true)
+            mutableStateOf(false)
         }
         Card(
             modifier = Modifier
@@ -59,7 +62,11 @@ fun AnimationVisibility(
                 )
         }
 
-        AnimatedVisibility(visible = visible) {
+        AnimatedVisibility(
+            visible = visible,
+//            enter = slideInHorizontally() + fadeIn(),
+//            exit = slideOutHorizontally() + fadeOut()
+        ) {
             Card1(
                 modifier = Modifier.animateEnterExit(
 ////                    enter = slideInHorizontally(),
